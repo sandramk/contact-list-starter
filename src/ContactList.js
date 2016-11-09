@@ -23,7 +23,7 @@ class ContactList extends Component {
           id: 'wirt',
           name: 'Wirt',
           occupation: 'Adventurer',
-          avatar: 'http://66.media.tumblr.com/5ea59634756e3d7c162da2ef80655a39/tumblr_nvasff1WvQ61ufbniio1_400.jpg'
+          avatar: 'http://66.media.tumblr.com/5ea59634756e3d7c162da2ef80655a39/tumblr_nvasf1WvQ61ufbniio1_400.jpg'
         },
         {
           id: 'michael',
@@ -35,7 +35,7 @@ class ContactList extends Component {
           id: 'dana',
           name: 'Dana Scully',
           occupation: 'FBI Agent',
-          avatar: 'https://pbs.twimg.com/profile_images/7188819048056192/WnMTb__R.jpg'
+          avatar: 'https://pbs.twimg.com/profile_images/718881904834056192/WnMTb__R.jpg'
         }
       ]
     };

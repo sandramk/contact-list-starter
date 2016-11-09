@@ -9,7 +9,7 @@ class Contact extends Component {
         </div>
         <div className="contact-info">
           <h2>{this.props.name}</h2>
-          {this.prpos.occupation}
+          {this.props.occupation}
         </div>
       </li>
     );
