@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Contact = (props) => {
+const NewContact = (props) => {
   return (
     <li className="contact">
       <div className="image-cropper">
@@ -14,10 +14,10 @@ const Contact = (props) => {
   )
 }
 
-Contact.propTypes = {
+AddNewContact.propTypes = {
   avatar: React.PropTypes.string.isRequired,
   name: React.PropTypes.string.isRequired,
   occupation: React.PropTypes.string.isRequired
 };
 
-export default Contact;
+export default AddNewContact;
