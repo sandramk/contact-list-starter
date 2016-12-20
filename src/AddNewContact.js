@@ -1,23 +1,45 @@
 import React, { Component } from 'react';
 
-const NewContact = (props) => {
+class AddNewContact extends Component {
+  constructor(){
+    super();
+
+    this.state
+  }
+
   return (
-    <li className="contact">
-      <div className="image-cropper">
-        <img src={props.avatar} alt="avatar"/>
-      </div>
-      <div className="contact-info">
-        <h2>{props.name}</h2>
-        {props.occupation}
-      </div>
-    </li>
-  )
-}
+    <div>
+      <input
+        className='new-contact'
+        type='text'
+        value={props.value}
+        onChange={ event => props.onChange(event) }
+      />
+      <input
+        className='new-contact'
+        type='text'
+        value={props.value}
+        onChange={ event => props.onChange(event) }
+      />
+      <input
+        className='new-contact'
+        type='text'
+        value={props.value}
+        onChange={ event => props.onChange(event) }
+      />
+    </div>
+  );
+};
+
+// NewContact.propTypes = {
+//   avatar: React.PropTypes.string.isRequired,
+//   name: React.PropTypes.string.isRequired,
+//   occupation: React.PropTypes.string.isRequired
+// };
 
 AddNewContact.propTypes = {
-  avatar: React.PropTypes.string.isRequired,
-  name: React.PropTypes.string.isRequired,
-  occupation: React.PropTypes.string.isRequired
+  value: React.PropTypes.string.isRequired,
+  onChange: React.PropTypes.func.isRequired
 };
 
 export default AddNewContact;

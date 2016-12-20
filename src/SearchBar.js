@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
 
-class SearchBar extends Component {
-  render() {
-    return (
-      <input
-        className='search-bar'
-        type="text"
-        value={this.props.value}
-        onChange={ event => this.props.onChange(event) }
-      />
-    );
-  }
-}
+const SearchBar = (props) => {
+  return (
+    <input
+      className='search-bar'
+      type='text'
+      value={props.value}
+      onChange={ event => props.onChange(event) }
+    />
+  );
+};
 
 SearchBar.propTypes = {
   value: React.PropTypes.string.isRequired,

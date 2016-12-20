@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Contact from './Contact';
-import AddNewContact from './AddNewContact';
+// import AddNewContact from './AddNewContact';
 
 class ContactList extends Component {
 

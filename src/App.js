@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import ContactList from './ContactList';
 import SearchBar from './SearchBar';
-import axios from 'axios';
+import AddNewContact from './AddNewContact';
 
 class App extends Component {
   constructor() {
@@ -15,11 +16,18 @@ class App extends Component {
     };
   }
 
-  componentWillMount() {
-    console.log('componentWillMount');
-    debugger;
-  }
-  handleSearchBarChange(event) {
+componentDidMount() {
+    axios.get('https://limitless-bayou-36199.herokuapp.com/api/contacts')
+      .then(resp => {
+        this.setState({
+          searchText: this.state.searchText,
+          contacts: resp.data
+        })
+      })
+      .catch(err => console.log(`Error! ${err}`));
+}
+
+  handleChange(event) {
     this.setState({
       contacts: this.state.contacts,
       searchText: event.target.value
@@ -43,25 +51,14 @@ class App extends Component {
   }
 
 render() {
-  console.log('render');
-  debugger;
     return (
       <div className="App">
-        <SearchBar value={this.state.searchText} onChange={this.handleSearchBarChange.bind(this)}/>
+      //not sure what to do with the value of AddNewContact
+        <AddNewContact value={this.state.searchText} onChange={this.handleChange.bind(this)}/>
+        <SearchBar value={this.state.searchText} onChange={this.handleChange.bind(this)}/>
         <ContactList contacts={this.getFilteredContacts()}/>
       </div>
     );
-  }
-
-  componentDidMount() {
-    axios.get('localhost:3001')
-      .then(resp => {
-        this.setState({
-          searchText: this.state.searchText,
-          contacts: resp.data
-        })
-      })
-    .catch(err => console.log('Error ${err}'));
   }
 }
 
